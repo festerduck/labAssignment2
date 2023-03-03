@@ -116,7 +116,7 @@ void findData()
 			break;
 		}
 		findPtr = findPtr->nptr;
-	}
+	} //while
 	index = 0;
 	if (flag == 0)
 	{
