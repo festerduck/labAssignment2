@@ -4,8 +4,8 @@ using namespace std;
 
 void addData();
 void newNode(string dataEntered);
-void displayData();
-void findData();
+int displayData();
+int findData();
 
 struct node
 {
@@ -14,11 +14,11 @@ struct node
 };
 
 node* fptr = NULL;
-int index = 0;
+int index = 0, counter = 0;
 
 int main()
 {
-	int option;
+	char option;
 	while (1)
 	{
 		cout << "Choose the following options: " << endl;
@@ -28,22 +28,23 @@ int main()
 		cin >> option;
 		switch (option)
 		{
-		case 1:
+		case '1':
 		{
 			addData();
 			break;
 		}
-		case 2:
+		case '2':
 		{
 			findData();
 			break;
 		}
-		case 3:
+		case '3':
 		{
 			displayData();
 			break;
 		}
 		default:
+			cout << "Please Select from the given options." << endl;
 			break;
 		}
 		cout << endl;
@@ -82,9 +83,15 @@ void newNode(string dataEntered)
 		currentptr->nptr = ptr;
 		ptr->nptr = NULL;
 	}
+	counter++;
 }
-void displayData()
+int displayData()
 {
+	if (counter == 0)
+	{
+		cout << "No Data has been entered yet." << endl;
+		return 0;
+	}//if
 	int displayIndex = 1;
 	node* displayPtr = fptr;
 	while (displayPtr != NULL)
@@ -92,10 +99,16 @@ void displayData()
 		cout << "\tData at Node [ " << displayIndex << " ] = " << displayPtr->data << endl;
 		displayPtr = displayPtr->nptr;
 		displayIndex++;
-	}
+	} //while
+	return 1;
 }
-void findData()
+int findData()
 {
+	if (counter == 0)
+	{
+		cout << "No Data has been entered yet." << endl;
+		return 0;
+	}//if
 	string dataToFind;
 	cout << "Enter the Data You want to find: ";
 	cin.ignore();
@@ -122,4 +135,5 @@ void findData()
 	{
 		cout << "\tData has NOT been found in the list." << endl;
 	}
+	return 1;
 }
