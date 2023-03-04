@@ -21,10 +21,10 @@ int main()
 	char option;
 	while (1)
 	{
-		cout << "Choose the following options: " << endl;
-		cout << "\t1. Add data" << endl;
-		cout << "\t2. Find Data" << endl;
-		cout << "\t3. Display All Data" << endl;
+		cout << "Choose the following options: " << endl
+		<< "\t1. Add data" << endl
+		<< "\t2. Find Data" << endl
+		<< "\t3. Display All Data" << endl;
 		cin >> option;
 		switch (option)
 		{
