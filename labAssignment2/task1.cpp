@@ -133,7 +133,7 @@ int findData()
 	index = 0;
 	if (flag == 0)
 	{
-		cout << "\tData has NOT been found in the list." << endl;
+		cout << "\tValue not found." << endl;
 	}
 	return 1;
 }
